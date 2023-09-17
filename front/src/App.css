@@ -1,0 +1,21 @@
+.App {
+
+  text-align: center;
+  background-color: #f1f6fc;
+  height: 100vh;
+}
+
+.App p {
+  text-decoration:underline;
+  font-size: small;
+  color: #3f6b9e;
+  cursor: pointer;
+}
+
+.App p:hover {
+  text-decoration:underline;
+  font-weight: 440;
+  font-size: small;
+  color: #04489b;
+  cursor: pointer;
+}

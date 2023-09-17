@@ -1,0 +1,27 @@
+
+.select label {
+
+    margin-right: 8px;
+    display: block;
+    padding-left: 0;
+
+
+    
+}
+
+.select {
+
+    padding-top: 4px;
+    padding-bottom:4px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.select select {
+
+    height: 36px;
+    width: 40%;
+    border-radius: 8px;
+    border:1px #3f6b9e solid;
+}
