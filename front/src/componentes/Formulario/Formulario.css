@@ -1,55 +1,53 @@
 .formulario {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   width: 400px;
-   height: 32%;
+
+    width: 480px;
+    height: 60%;
 }
+ 
+ .formulario form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+ 
+ 
+     padding: 32px;
+     padding-top: 10px;
+     border-radius: 8px;
+     height: 100%;
+     width: 100%;
+     background-color: #FFFFFF;
+     box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.1);
+ }
 
-.formulario form {
-
-    text-align: center;
-
-    padding: 20px;
-    padding-top: 10px;
-    border-radius: 8px;
-    width: 100%;
-    background-color: #FFFFFF;
-    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.1);
-}
-
-h3 {
-
-    margin-bottom: 50px;
-}
-
-.formulario form button {
-    height: 36px;
-    width: 100%;
-    margin-top: 32px;
-    border-radius: 8px;
-    background-color: #FFFFFF;
-    border:1px #8c949e solid;
-    transition: background 0.4s;
-    color: #8c949e;
-}
-.formulario form button:hover {
-
-    background-color: #3f6b9e;
-    color:#FFFFFF
-
-
-}
-
-#email {
-
-    width: 400px;
-    padding-top: 10px;
-}
-#senha {
-
-    width: 400px;
-    padding-top: 10px;
-
-}
+ .formulario form button {
+     height: 36px;
+     width: 100%;
+     margin-top: 32px;
+     border-radius: 8px;
+     background-color: #FFFFFF;
+     border:1px #8c949e solid;
+     transition: background 0.4s;
+     color: #8c949e;
+     display: block;
+ }
+ .formulario form button:hover {
+ 
+     background-color: #3f6b9e;
+     color:#FFFFFF
+ 
+ 
+ }
+ 
+ #email {
+    
+ 
+     width: 100%;
+     padding-top: 8px;
+ }
+ #senha {
+ 
+     width: 100%;
+     padding-top: 8px;
+ 
+ }
 

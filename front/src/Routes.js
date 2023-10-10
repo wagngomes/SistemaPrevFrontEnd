@@ -38,7 +38,7 @@ const Rotas = () => {
                 <Route exact path="/Dashboard" element={<MySideNav><Dashboard /></MySideNav>} />
                 <Route exact path="/Planejador" element={<Private><MySideNav><Planejador /></MySideNav></Private>} />
             </Routes>
-            </AuthProvider>
+        </AuthProvider>
         </BrowserRouter>
     )
 }

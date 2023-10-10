@@ -3,5 +3,47 @@
   background-color: #f1f6fc;
   height: 100vh;
   color: black;
-  width: 100%;
+  width: 96%;
+  margin-left: 60px;
+}
+.solicitacao header{
+
+  display: flex;
+
+  margin-top: 8px;
+
+  height: 52px;
+  background-color: #ffffff;
+  width: 96%;
+  border-radius: 8px;
+  margin-left: auto;
+  margin-right: auto;
+
+
+}
+.solicitacao section{
+
+margin-top: 8px;
+display: flex;
+height: 120px;
+background-color: #f1f6fc;
+width: 96%;
+border-radius: 8px;
+margin-left: auto;
+margin-right: auto;
+text-align: left;
+align-items: center;
+justify-content: space-between;
+
+}
+main{
+height: 26em;
+background-color: #ffffff;
+border-radius: 8px;
+margin-left: auto;
+margin-right: auto;
+align-items: center;
+justify-content: center;
+box-sizing: border-box;
+
 }

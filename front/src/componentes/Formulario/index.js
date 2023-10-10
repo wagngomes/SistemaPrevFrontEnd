@@ -30,7 +30,6 @@ const Formulario = () => {
 
         <section className="formulario">
             <form onSubmit={handleSubmit}>
-                <h3>Previsões e transferências</h3>
 
                 <TextField id="email" label="Email" variant="standard" value={email} onChange={(e) => setEmail(e.target.value)}/>
                 <TextField id="senha" label="Senha" variant="standard" type="password" value={senha} onChange={(e) => setSenha(e.target.value)}/>

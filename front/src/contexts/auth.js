@@ -13,7 +13,7 @@ export const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        const recoveredUser = localStorage.getItem('user')
+        const recoveredUser = localStorage.getItem('usuario')
         if (recoveredUser) {
             setUser(JSON.parse(recoveredUser))
         }
@@ -24,27 +24,29 @@ export const AuthProvider = ({ children }) => {
     const login = async (email, senha) => {
         const response = await createSession(email, senha)
         const token = response.data.accessToken
-
-        //const loggedUser = response.data.user
         const loggedUser = jwt_decode(token) 
+    
 
-        console.log(response)
-        console.log(loggedUser.email)
-        console.log(loggedUser.user)
-
-        localStorage.setItem('user', JSON.stringify(loggedUser))
+        localStorage.setItem('usuario', JSON.stringify(loggedUser.user))
+        localStorage.setItem('email', JSON.stringify(loggedUser.email))
+        localStorage.setItem('id', JSON.stringify(loggedUser.id))
         localStorage.setItem('token', token)
 
         api.defaults.headers.Authorization = `Bearer ${token}`
+        
+        setUser(loggedUser.user)
 
-        setUser(loggedUser)
+        console.log("valor da variavel user")
+
+        console.log(user)
         navigate('/planejador')
 
     }
 
     const logout = () => {
         console.log('logout')
-        localStorage.removeItem("user")
+        localStorage.removeItem("usuario")
+        localStorage.removeItem("email")
         localStorage.removeItem("token")
         api.defaults.headers.Authorization = null
         setUser(null)

@@ -11,6 +11,11 @@ const MySideNav = ({ children }) => {
 
     const menuItem = [
         {
+            path: "/Solicitacao",
+            name: "Solicitações",
+            icon: <FaListOl />
+        },
+        {
             path: "/Transferencia",
             name: "Transferência",
             icon: <FaShippingFast />
@@ -19,11 +24,6 @@ const MySideNav = ({ children }) => {
             path: "/Previsao",
             name: "Previsao",
             icon: <FaCalendarAlt />
-        },
-        {
-            path: "/Solicitacao",
-            name: "Solicitações",
-            icon: <FaListOl />
         },
         {
             path: "/Dashboard",
@@ -62,5 +62,4 @@ const MySideNav = ({ children }) => {
         </div>
     )
 }
-
 export default MySideNav

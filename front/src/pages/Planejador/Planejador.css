@@ -3,10 +3,12 @@
     background-color: #f1f6fc;
     height: 100vh;
     color: black;
-    width: 100%;
+    width: 96%;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
+    justify-content: center;
+    margin-left: 60px;
 }
 
 header{
@@ -78,7 +80,6 @@ button:hover{
 main{
     height: 26em;
     background-color: #ffffff;
-    width: 98%;
     border-radius: 8px;
     margin-left: auto;
     margin-right: auto;
