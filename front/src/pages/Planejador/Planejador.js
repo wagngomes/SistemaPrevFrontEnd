@@ -3,12 +3,19 @@ import { FaSistrix, FaUserAlt } from 'react-icons/fa'
 import { useState, useEffect } from 'react'
 import ModalRequisicao from '../../componentes/ModalRequisicao'
 import DataTable from 'react-data-table-component'
+import IconButton from '@mui/material/IconButton';
+import EditIcon from '@mui/icons-material/Edit';
+
+
 
 
 const Planejador = () => {
 
     const [openModalRequisicao, setOpenModalRequisicao] = useState(false)
     const [dadosCard, setDadosCard] = useState([])
+    const handleEdit = () => {
+        console.log("click")
+    }
 
     useEffect(() => {
         buscaRequisicoes()
@@ -68,7 +75,14 @@ const Planejador = () => {
             name: 'destino',
             selector: row => row.destino,
         },
-
+        {
+            name: 'editar',
+            cell: (row) => (
+              <IconButton onClick={() => handleEdit(row.id)}>
+                <EditIcon />
+              </IconButton>
+            ),
+          },
 
     ]
 

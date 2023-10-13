@@ -17,7 +17,6 @@ export const createSession = async (dados) => {
         .catch((response) =>{
 
             return (error.message)
-            alert(error.message)
 
 
         })

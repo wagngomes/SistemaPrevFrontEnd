@@ -22,9 +22,12 @@ export const AuthProvider = ({ children }) => {
     }, [])
 
     const login = async (email, senha) => {
+        
+
         const response = await createSession(email, senha)
         const token = response.data.accessToken
         const loggedUser = jwt_decode(token) 
+        
     
 
         localStorage.setItem('usuario', JSON.stringify(loggedUser.user))
@@ -35,10 +38,6 @@ export const AuthProvider = ({ children }) => {
         api.defaults.headers.Authorization = `Bearer ${token}`
         
         setUser(loggedUser.user)
-
-        console.log("valor da variavel user")
-
-        console.log(user)
         navigate('/planejador')
 
     }
@@ -52,5 +51,5 @@ export const AuthProvider = ({ children }) => {
         setUser(null)
         navigate('/')
     }
-    return (<AuthContext.Provider value={{authenticated: !!user, user, loading, login, logout}}>{children}</AuthContext.Provider>)
+    return (<AuthContext.Provider value={{authenticated: !user, user, loading, login, logout}}>{children}</AuthContext.Provider>)
 }
