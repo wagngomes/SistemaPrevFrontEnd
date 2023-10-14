@@ -51,5 +51,5 @@ export const AuthProvider = ({ children }) => {
         setUser(null)
         navigate('/')
     }
-    return (<AuthContext.Provider value={{authenticated: !user, user, loading, login, logout}}>{children}</AuthContext.Provider>)
+    return (<AuthContext.Provider value={{authenticated: !!user, user, loading, login, logout}}>{children}</AuthContext.Provider>)
 }
