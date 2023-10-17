@@ -50,11 +50,10 @@ const Transferencia = () => {
 
         <div className='transferencia'>
             <header>
-                <FaSistrix />
                 <input type="text" id="busca" placeholder="   Buscar"></input>
                 <div className='espaco'>
                 </div>
-                <FaUserAlt color='#007cbc' />
+                <FaUserAlt color='#007cbc' className='usuarioIcon'/>
                 <p></p>
             </header>
 

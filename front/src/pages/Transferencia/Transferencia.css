@@ -1,16 +1,17 @@
 .transferencia {
-  text-align: center;
-  background-color: #f4f4f6;
-  height: 100vh;
-  color: black;
-  width: 96%;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  margin-left: 60px;
-  border-radius: 8px;
-  }
-.transferencia header{
+    text-align: center;
+    background-color: #f4f4f6;
+    height: 100vh;
+    color: black;
+    width: 96%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin-left: 60px;
+    border-radius: 8px;
+}
+
+header {
 
     display: flex;
 
@@ -22,25 +23,27 @@
     border-radius: 8px;
     margin-left: auto;
     margin-right: auto;
-  
+
 
 }
 
-h3{
+h3 {
     display: inline;
 }
-button{
+
+button {
 
     height: 40px;
     width: 118px;
     border-radius: 8px;
     background-color: #0466c8;
-    border:none;
-    color:#ffffff;
+    border: none;
+    color: #ffffff;
     margin-left: 1px;
     display: inline;
 }
-.transferencia section{
+
+section {
 
     margin-top: 8px;
     display: flex;
@@ -55,29 +58,32 @@ button{
     justify-content: space-between;
 
 }
-.espaco{
+
+.espaco {
     width: 5em;
 }
-button:hover{
 
-    background-color: #0353a4;
-    border:none;
-    color:black;
+button:hover {
+
+    background-color: #023e7d;
+    border: none;
+    color: black;
 
 
 }
-.transferencia #busca{
+
+.transferencia #busca {
 
     width: 320px;
     height: 28px;
     border-radius: 8px;
     border: none;
-    background-color:#f1f6fc;
+    background-color: #f1f6fc;
 
 
 }
 
-.transferencia main{
+.transferencia main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 16px;
@@ -86,7 +92,11 @@ button:hover{
     width: 96%;
     background-color: #ffffff;
     border-radius: 8px;
-    box-sizing:border-box;
+    box-sizing: border-box;
 
 
+}
+
+.usuarioIcon {
+    margin-top: 20px;
 }

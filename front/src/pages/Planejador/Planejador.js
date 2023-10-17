@@ -12,9 +12,10 @@ import ModalCalendario from '../../componentes/Calendario/Calendario'
 
 const Planejador = () => {
 
-    const [openModalRequisicao, setOpenModalRequisicao] = useState(false)
     const [openModalCalendario, setOpenModalCalendario] = useState(false)
     const [dadosCard, setDadosCard] = useState([])
+
+    
     const handleEdit = () => {
         console.log("click")
     }
@@ -80,7 +81,7 @@ const Planejador = () => {
         {
             name: 'editar',
             cell: (row) => (
-              <IconButton onClick={() => handleEdit(row.id)}>
+              <IconButton onClick={() => setOpenModalCalendario(true)}>
                 <EditIcon />
               </IconButton>
             ),
@@ -90,12 +91,11 @@ const Planejador = () => {
 
     return (
             <div className='planejador'>
-                <header>
-                    <FaSistrix />
+                <header>               
                     <input type="text" id="busca" placeholder="   Buscar"></input>
                     <div className='espaco'>
                     </div>
-                    <FaUserAlt color='#007cbc' />
+                    <FaUserAlt color='#007cbc' className='usuarioIcon' />
                 </header>
 
                 <section>

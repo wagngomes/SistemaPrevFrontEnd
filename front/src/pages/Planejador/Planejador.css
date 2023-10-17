@@ -80,10 +80,13 @@ main{
     height: 26em;
     background-color: #ffffff;
     border-radius: 8px;
-    margin-left: auto;
-    margin-right: auto;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
+    width: 96%;
+    box-sizing:border-box;
 
 }
+.usuarioIcon {
+    margin-top: 20px;
+  }
