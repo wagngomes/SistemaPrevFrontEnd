@@ -4,7 +4,8 @@ import { useState, useEffect } from 'react'
 import ModalRequisicao from '../../componentes/ModalRequisicao'
 import DataTable from 'react-data-table-component'
 import IconButton from '@mui/material/IconButton';
-import EditIcon from '@mui/icons-material/Edit';
+import EditIcon from '@mui/icons-material/Edit'; 
+import ModalCalendario from '../../componentes/Calendario/Calendario'   
 
 
 
@@ -12,6 +13,7 @@ import EditIcon from '@mui/icons-material/Edit';
 const Planejador = () => {
 
     const [openModalRequisicao, setOpenModalRequisicao] = useState(false)
+    const [openModalCalendario, setOpenModalCalendario] = useState(false)
     const [dadosCard, setDadosCard] = useState([])
     const handleEdit = () => {
         console.log("click")
@@ -50,12 +52,12 @@ const Planejador = () => {
             name: 'id',
             selector: row => row.id,
             selectableRowsHighlight: true,
-            width: '120px'
+            width: '60px'
         },
         {
             name: 'codigo',
             selector: row => row.codigo,
-            width: '160px'
+            width: '120px'
         },
         {
             name: 'descricao',
@@ -82,7 +84,7 @@ const Planejador = () => {
                 <EditIcon />
               </IconButton>
             ),
-          },
+        },
 
     ]
 
@@ -98,7 +100,7 @@ const Planejador = () => {
 
                 <section>
                     <h3>Área do planejador</h3>
-                    <button onClick={() => setOpenModalRequisicao(true)}>Novo</button>
+                    <button onClick={() => setOpenModalCalendario(true)}>Novo</button>
                 </section>
 
                 <main>
@@ -109,7 +111,7 @@ const Planejador = () => {
                     />
                 </main>
                 <div>
-                    <ModalRequisicao isOpen={openModalRequisicao} />
+                    <ModalCalendario isOpen={openModalCalendario} />
                 </div>
             </div>
 

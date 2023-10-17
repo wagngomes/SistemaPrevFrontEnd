@@ -1,6 +1,6 @@
 .planejador {
     text-align: center;
-    background-color: #f1f6fc;
+    background-color: #f4f4f6;
     height: 100vh;
     color: black;
     width: 96%;
@@ -23,7 +23,6 @@ header{
     border-radius: 8px;
     margin-left: auto;
     margin-right: auto;
-    align-items: center;
     justify-content: center;
 
 }

@@ -2,6 +2,9 @@ import './Dashboard.css'
 
 import { Chart } from "react-google-charts";
 
+import Calendario from '../../componentes/Calendario/Calendario';
+import Calendar from 'react-calendar'
+import 'react-calendar/dist/Calendar.css'
 
 
 const Dashboard = () => {
@@ -22,6 +25,7 @@ const Dashboard = () => {
 
 
             <h1>DASHBOARD</h1>
+            <Calendar/>
 
 
             <Chart chartType="ColumnChart" width="94%" height="400px"  margin-top="40px" data={data} />
