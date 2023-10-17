@@ -35,6 +35,12 @@ const CALENDAR_AREA = {
     justifyContent: 'center',
     alignItems: 'center'
    }
+
+const ICONS_AREA = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+   }
    
 
 const ModalCalendario = ({ isOpen, onClose}) => {
@@ -49,10 +55,16 @@ const ModalCalendario = ({ isOpen, onClose}) => {
                         <Calendar
                             defaultView='year' />
 
+
+                        
+
                     </div>
                     <IconButton><CloseIcon /><p className='btnTxt'>Fechar</p></IconButton>
-                    <IconButton><DeleteForever /><p className='btnTxt'>Deletar</p></IconButton>
-                    <IconButton ><ForwardToInboxIcon/><p className='btnTxt'>Responder</p></IconButton>
+                        <IconButton><DeleteForever /><p className='btnTxt'>Deletar</p></IconButton>
+                        <IconButton ><ForwardToInboxIcon /><p className='btnTxt'>Responder</p></IconButton>
+
+
+
                 </div>
             </div>
         )

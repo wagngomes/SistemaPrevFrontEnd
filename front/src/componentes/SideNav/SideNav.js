@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom'
 import './SideNav.css'
 import { FaBars, FaCalendarAlt, FaChartBar, FaShippingFast, FaAddressCard, FaListOl, FaExternalLinkAlt } from 'react-icons/fa'
 import { useState } from 'react'
+import AssignmentLateIcon from '@mui/icons-material/AssignmentLate';
 
 
 const MySideNav = ({ children }) => {
@@ -13,7 +14,7 @@ const MySideNav = ({ children }) => {
         {
             path: "/Solicitacao",
             name: "Solicitações",
-            icon: <FaListOl />
+            icon: <AssignmentLateIcon />
         },
         {
             path: "/Transferencia",

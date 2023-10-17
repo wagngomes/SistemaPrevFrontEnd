@@ -1,6 +1,24 @@
 import './Solicitacao.css'
 import { FaSistrix, FaUserAlt } from 'react-icons/fa'
+import ModalRequisicao from '../../componentes/ModalRequisicao'
+import { useState } from 'react'
+
+
+
 const Solicitacoes = () => {
+    const [openModalRequisicao, setOpenModalRequisicao] = useState(false)
+   
+
+    const abrirModal = () => {
+
+        setOpenModalRequisicao(true)
+    }
+    const fecharModal = () => {
+
+        setOpenModalRequisicao(false)
+        window.location.reload()
+
+    }
 
   return(
 
@@ -14,10 +32,14 @@ const Solicitacoes = () => {
           </header>
           <section>
               <h3>Área de solicitações</h3>
+              <button onClick={() => setOpenModalRequisicao(true)}>Nova solicitação</button>
           </section>
           <main>
 
           </main>
+          <div>
+                <ModalRequisicao isOpen={openModalRequisicao} onClose={fecharModal} />
+            </div>
       </div>
   )
 

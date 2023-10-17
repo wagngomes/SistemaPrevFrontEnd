@@ -1,26 +1,14 @@
 import './Transferencia.css'
 import { FaSistrix, FaUserAlt } from 'react-icons/fa'
 import { useState, useEffect } from 'react'
-import ModalRequisicao from '../../componentes/ModalRequisicao'
 import { useContext } from 'react'
 import { AuthProvider } from '../../contexts/auth'
 import NoteCard from '../../componentes/Card/NoteCard'
 import { Experimental_CssVarsProvider, Grid } from '@mui/material'
 
 const Transferencia = () => {
-    const [openModalRequisicao, setOpenModalRequisicao] = useState(false)
     const [dadosCard, setDadosCard] = useState([])
 
-    const abrirModal = () => {
-
-        setOpenModalRequisicao(true)
-    }
-    const fecharModal = () => {
-
-        setOpenModalRequisicao(false)
-        window.location.reload()
-
-    }
 
     useEffect(() => {
         buscaRequisicoes()
@@ -59,7 +47,6 @@ const Transferencia = () => {
 
             <section>
                 <h3>Área de transferências</h3>
-                <button onClick={() => setOpenModalRequisicao(true)}>Novo</button>
             </section>
             <main>
                 {dadosCard.map((dadosReq, index) => (
@@ -76,9 +63,6 @@ const Transferencia = () => {
                 ))}
 
             </main>
-            <div>
-                <ModalRequisicao isOpen={openModalRequisicao} onClose={fecharModal} />
-            </div>
 
         </div>
 

@@ -100,7 +100,6 @@ const Planejador = () => {
 
                 <section>
                     <h3>Área do planejador</h3>
-                    <button onClick={() => setOpenModalCalendario(true)}>Novo</button>
                 </section>
 
                 <main>
