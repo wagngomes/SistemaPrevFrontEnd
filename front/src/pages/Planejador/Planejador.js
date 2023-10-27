@@ -1,5 +1,5 @@
 import './Planejador.css'
-import { FaSistrix, FaUserAlt } from 'react-icons/fa'
+import { FaLessThanEqual, FaSistrix, FaUserAlt } from 'react-icons/fa'
 import { useState, useEffect } from 'react'
 import ModalRequisicao from '../../componentes/ModalRequisicao'
 import DataTable from 'react-data-table-component'
@@ -14,10 +14,44 @@ const Planejador = () => {
 
     const [openModalCalendario, setOpenModalCalendario] = useState(false)
     const [dadosCard, setDadosCard] = useState([])
+    const [requisicaoDados, setRequisicaoDados] = useState([])
+    const [requisicaoInfo, setRequisicaoInfo] = useState(null);
+
+    const onClose =() => {
+        setOpenModalCalendario(false)
+    }
+
+
+
+
+
 
     
-    const handleEdit = () => {
-        console.log("click")
+    async function handleEdit(id){
+
+
+        const _token = localStorage.getItem('token')
+
+        try {
+            const requisicaoPorId = await fetch(`http://localhost:5000/req/${id}`, {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${_token}`
+                }
+            })
+            const requisicaoInfo = await requisicaoPorId.json()
+
+            setRequisicaoInfo(requisicaoInfo);
+
+            setRequisicaoDados(requisicaoInfo)
+            console.log(requisicaoInfo)
+        } catch (erro) {
+            
+        }
+
+
+        setOpenModalCalendario(true)
+
     }
 
     useEffect(() => {
@@ -81,7 +115,7 @@ const Planejador = () => {
         {
             name: 'editar',
             cell: (row) => (
-              <IconButton onClick={() => setOpenModalCalendario(true)}>
+              <IconButton onClick={() => handleEdit(row.id)}>
                 <EditIcon />
               </IconButton>
             ),
@@ -110,7 +144,7 @@ const Planejador = () => {
                     />
                 </main>
                 <div>
-                    <ModalCalendario isOpen={openModalCalendario} />
+                    <ModalCalendario isOpen={openModalCalendario} requisicaoInfo={requisicaoInfo} onClose={onClose}/>
                 </div>
             </div>
 

@@ -1,12 +1,15 @@
 import { useState } from 'react'
 import axios from 'axios'
-import Calendar from "react-calendar"
+import './Calendario.css'
+
 import 'react-calendar/dist/Calendar.css';
 import DeleteForever from '@mui/icons-material/DeleteForever';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import ForwardToInboxIcon from '@mui/icons-material/ForwardToInbox';
-import { FaLaptopHouse } from 'react-icons/fa';
+import { Calendar } from 'primereact/calendar';
+import "primereact/resources/themes/lara-light-indigo/theme.css"; 
+
 
 const BACKGROUND_STYLE = {
     position: 'fixed',
@@ -19,6 +22,8 @@ const BACKGROUND_STYLE = {
 }
 
 const MODAL_STYLE = {
+    display: 'flex',
+    flexDirection: 'column',
     position: 'fixed',
     top: '50%',
     left: '50%',
@@ -38,12 +43,14 @@ const CALENDAR_AREA = {
 
 const ICONS_AREA = {
     display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center'
+    flexDirection: 'row',
+    justifyContent: 'center'
    }
    
 
-const ModalCalendario = ({ isOpen, onClose}) => {
+const ModalCalendario = ({ isOpen, onClose, requisicaoInfo }) => {
+
+    const [date, setDate] = useState(null);
 
 
     if (isOpen) {
@@ -51,18 +58,22 @@ const ModalCalendario = ({ isOpen, onClose}) => {
         return (
             <div style={BACKGROUND_STYLE}>
                 <div style={MODAL_STYLE}>
-                    <div style={CALENDAR_AREA}>
-                        <Calendar
-                            defaultView='year' />
+
+                    <Calendar value={date} onChange={(e) => setDate(e.value)} />
 
 
-                        
+                    <p className='reqDados'>{requisicaoInfo[0].solicitante_email || "N/A"}</p>
+                    <p className='reqDados'>{requisicaoInfo[0].solicitante_nome || "N/A"}</p>
+                    <p className='reqDados'>{requisicaoInfo[0].createdAt || "N/A"}</p>
+                    <p className='reqDados'>{requisicaoInfo[0].obs || "N/A"}</p>
 
+
+                    <div style={ICONS_AREA} >
+
+                        <IconButton className='iconBtn' onClick={onClose}><CloseIcon /><p className='btnTxt'>Fechar</p></IconButton>
+                        <IconButton className='iconBtn'><DeleteForever /><p className='btnTxt'>Deletar</p></IconButton>
+                        <IconButton className='iconBtn'><ForwardToInboxIcon /><p className='btnTxt'>Responder</p></IconButton>
                     </div>
-                    <IconButton><CloseIcon /><p className='btnTxt'>Fechar</p></IconButton>
-                        <IconButton><DeleteForever /><p className='btnTxt'>Deletar</p></IconButton>
-                        <IconButton ><ForwardToInboxIcon /><p className='btnTxt'>Responder</p></IconButton>
-
 
 
                 </div>

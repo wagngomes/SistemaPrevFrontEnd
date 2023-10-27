@@ -7,6 +7,7 @@ import Planejador from './pages/Planejador/Planejador'
 import MySideNav from './componentes/SideNav/SideNav'
 import Login from './pages/Login/Login'
 
+
 import { AuthProvider, AuthContext } from './contexts/auth';
 import { useContext } from 'react'
 

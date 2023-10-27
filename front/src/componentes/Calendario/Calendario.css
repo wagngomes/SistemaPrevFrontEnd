@@ -1,22 +1,10 @@
-.react-calendar { 
-    width: 600px;
-    max-width: 100%;
-    color: #14087a;
-    border-radius: 8px;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.125em;
-   }
-   .react-calendar__navigation button {
-    color: #6f48eb;
-    min-width: 44px;
-    background: none;
-    font-size: 16px;
+.iconBtn{
+
     margin-top: 8px;
-   }
-   .calendarioArea {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   }
-   
+
+    width: 120px;
+}
+
+.reqDados{
+    margin-top: 8px;
+}
