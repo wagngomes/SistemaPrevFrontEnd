@@ -27,6 +27,11 @@ h6 {
 .card:hover {
     box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.8);
 }
+.content {
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+}
 
 p {
     display: inline;
@@ -41,23 +46,17 @@ p {
     background-color: transparent;
 }
 
+
+.action {
+    box-sizing: border-box;
+    padding: 8px;
+    display: flex;
+    width: 33%;
+}
+
 .btnTxt {
     font-size: 12px;
-}
-.action {
-    padding-left: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-.content {
-    margin-top: 4px;
-    display: flex;
-    align-items: center;
-}
-.id {
-    font-size: 12px;
-    color: blue;
+    padding: 8px;
 }
 
 

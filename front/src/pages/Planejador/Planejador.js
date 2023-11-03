@@ -1,7 +1,6 @@
 import './Planejador.css'
 import { FaLessThanEqual, FaSistrix, FaUserAlt } from 'react-icons/fa'
 import { useState, useEffect } from 'react'
-import ModalRequisicao from '../../componentes/ModalRequisicao'
 import DataTable from 'react-data-table-component'
 import IconButton from '@mui/material/IconButton';
 import EditIcon from '@mui/icons-material/Edit'; 

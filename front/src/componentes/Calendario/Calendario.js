@@ -52,6 +52,35 @@ const ModalCalendario = ({ isOpen, onClose, requisicaoInfo }) => {
 
     const [date, setDate] = useState(null);
 
+    const responderRequisicao = async () => {  
+
+        const _token = localStorage.getItem('token')
+
+        try{
+            const dadosEmail = await axios.post('http://localhost:5000/mailSend', {
+
+                "destinatarioNone": requisicaoInfo[0].solicitante_nome,
+                "destinatarioEmail": "wagner.gomes.cx2@gmail.com",
+                "dataPrometida": date,
+                "codigo": requisicaoInfo[0].codigo,
+                "desricao": requisicaoInfo[0].descricao
+            }, {
+                headers: {
+                    'Content-type': 'application/json',
+                    Authorization: `Bearer ${_token}`
+                },
+            })
+
+            console.log(date)
+
+        }catch(error){
+            console.log('erro ao fazr a requisição', error)
+
+        }
+
+    }
+ 
+
 
     if (isOpen) {
 
@@ -59,7 +88,7 @@ const ModalCalendario = ({ isOpen, onClose, requisicaoInfo }) => {
             <div style={BACKGROUND_STYLE}>
                 <div style={MODAL_STYLE}>
 
-                    <Calendar value={date} onChange={(e) => setDate(e.value)} />
+                    <Calendar value={date} onChange={(e) => setDate(e.value)} dateFormat="dd/mm/yy"/>
 
 
                     <p className='reqDados'>{requisicaoInfo[0].solicitante_email || "N/A"}</p>
@@ -72,7 +101,7 @@ const ModalCalendario = ({ isOpen, onClose, requisicaoInfo }) => {
 
                         <IconButton className='iconBtn' onClick={onClose}><CloseIcon /><p className='btnTxt'>Fechar</p></IconButton>
                         <IconButton className='iconBtn'><DeleteForever /><p className='btnTxt'>Deletar</p></IconButton>
-                        <IconButton className='iconBtn'><ForwardToInboxIcon /><p className='btnTxt'>Responder</p></IconButton>
+                        <IconButton className='iconBtn' onClick={responderRequisicao}><ForwardToInboxIcon /><p className='btnTxt'>Responder</p></IconButton>
                     </div>
 
 
